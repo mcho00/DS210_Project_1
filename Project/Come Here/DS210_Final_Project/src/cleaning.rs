@@ -52,7 +52,7 @@ pub fn clean_data(dir: &str, output: &str) -> Result<(), Box<dyn Error>> {
     ])?;
     //store for second (1) column for future read and update
     let valid_types = vec!["CASH-IN", "CASH-OUT", "DEBIT", "PAYMENT", "TRANSFER"];
-
+    //deserialize based on the Transaction struct
     for result in reader.deserialize::<Transaction>() {
         let mut rec = match result {
             Ok(r) => r,

@@ -156,6 +156,8 @@ pub fn run_fraud_prediction(file_path: &str) -> Result<(), Box<dyn Error>> {
     }
 
     let split_ratio = 0.7;
+    //split_ratio change if you want
+    //recommend 0.7 ~?
     let train_size = (n as f64 * split_ratio) as usize;
 
     let x_train = x_data.slice(s![0..train_size, ..]).to_owned();
